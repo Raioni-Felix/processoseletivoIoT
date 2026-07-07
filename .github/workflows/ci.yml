@@ -28,4 +28,4 @@ jobs:
       with:
         token: ${{ secrets.WOKWI_CLI_TOKEN }}
         path: /
-        expect_text: 'Teste'
+        scenario: 'kanban-test-scenario.yaml'
