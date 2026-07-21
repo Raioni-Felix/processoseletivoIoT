@@ -55,7 +55,7 @@ while True:
     # ---------------------------------------------------------
     valor_adc = adc_ldr.read()
     
-    if valor_adc < LIMIAR_BLOQUEIO:
+     if valor_adc > LIMIAR_BLOQUEIO:
         # Estado: Peça bloqueando o feixe de luz (lux < 100)
         if not peca_bloqueando:
             peca_bloqueando = True
