@@ -27,7 +27,7 @@ tempo_ultimo_debounce = 0
 # 800 lux -> ADC Alto (> 3000)
 # 50 lux -> ADC Baixo (< 2500)
 LIMIAR_BLOQUEIO = 2500 
-TEMPO_MICRO_PARADA_MS = 5000
+TEMPO_MICRO_PARADA_MS = 4000
 
 # Inicialização exigida pelo CI
 print("Contador de Producao Inicializado")
@@ -76,4 +76,4 @@ while True:
             alerta_enviado = False
 
     # Delay mínimo para evitar 100% de uso de CPU no emulador/simulador
-    time.sleep_ms(10)
+    time.sleep_ms(50)
