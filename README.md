@@ -2,9 +2,7 @@
 
 ### Identificação do Candidato
 - **Nome completo:** Raioni Felix de Sousa
-- **GitHub:** Raioni-Felix
 
----
 
 ## Visão Geral da Solução
 O projeto consiste em um Contador de Produção Não-Intrusivo simulado no Wokwi. O sistema embarcado monitora a passagem de objetos em uma esteira através da variação de luminosidade captada por um sensor LDR. O firmware realiza a contagem das peças, detecta micro-paradas na linha de produção (gargalos) e permite o reset manual do turno através de um botão físico, emitindo logs e métricas via porta serial.
