@@ -23,9 +23,9 @@ ultimo_estado_btn = 1
 tempo_ultimo_debounce = 0
 
 # Limiares e Constantes
-# No Wokwi, o módulo photoresistor baixa a tensão no pino AO quando a luz diminui.
-# 800 lux -> ADC Alto (> 3000)
-# 50 lux -> ADC Baixo (< 2500)
+# No Wokwi, o módulo photoresistor atua elevando a tensão no pino AO quando a luz diminui.
+# 800 lux (livre) -> ADC Baixo (< 2500)
+# 50 lux (bloqueado) -> ADC Alto (> 3000)
 LIMIAR_BLOQUEIO = 2500 
 TEMPO_MICRO_PARADA_MS = 4000
 
@@ -55,7 +55,7 @@ while True:
     # ---------------------------------------------------------
     valor_adc = adc_ldr.read()
     
-     if valor_adc > LIMIAR_BLOQUEIO:
+    if valor_adc > LIMIAR_BLOQUEIO:
         # Estado: Peça bloqueando o feixe de luz (lux < 100)
         if not peca_bloqueando:
             peca_bloqueando = True
@@ -75,5 +75,5 @@ while True:
             print(f"Peca detectada! Total: {contador_pecas}")
             alerta_enviado = False
 
-    # Delay mínimo para evitar 100% de uso de CPU no emulador/simulador
+    # Delay mínimo ajustado para evitar sobrecarga no emulador sem prejudicar a leitura
     time.sleep_ms(50)
