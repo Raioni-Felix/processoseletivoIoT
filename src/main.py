@@ -40,8 +40,8 @@ while True:
     # ---------------------------------------------------------
     estado_btn = btn_reset.value()
     
-    # Detecta borda de descida (botão pressionado) com debounce não-bloqueante de 50ms
-    if estado_btn == 0 and ultimo_estado_btn == 1 and time.ticks_diff(tempo_atual, tempo_ultimo_debounce) > 50:
+    # Detecta borda de subida (botão liberado) com debounce não-bloqueante de 50ms
+    if estado_btn == 1 and ultimo_estado_btn == 0 and time.ticks_diff(tempo_atual, tempo_ultimo_debounce) > 50:
         contador_pecas = 0
         peca_bloqueando = False
         alerta_enviado = False
