@@ -50,9 +50,7 @@ while True:
         
     ultimo_estado_btn = estado_btn
 
-    # ---------------------------------------------------------
-    # 2. Lógica de Detecção (LDR) e Micro-paradas
-    # ---------------------------------------------------------
+    
     valor_adc = adc_ldr.read()
     
     if valor_adc > LIMIAR_BLOQUEIO:
