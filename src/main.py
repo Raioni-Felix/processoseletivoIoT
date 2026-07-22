@@ -55,8 +55,8 @@ while True:
     # ---------------------------------------------------------
     valor_adc = adc_ldr.read()
     
-    if valor_adc > LIMIAR_BLOQUEIO:
-        # Estado: Peça bloqueando o feixe de luz
+    if valor_adc < LIMIAR_BLOQUEIO:
+        # Estado: Peça bloqueando o feixe de luz (baixa luminosidade, ADC < limiar)
         if not peca_bloqueando:
             peca_bloqueando = True
             tempo_inicio_bloqueio = tempo_atual
@@ -67,7 +67,7 @@ while True:
                 print("Alerta: Micro-parada detectada!")
                 alerta_enviado = True
     else:
-        # Estado: Linha livre
+        # Estado: Linha livre (alta luminosidade, ADC > limiar)
         if peca_bloqueando:
             # Borda de subida (peça passou completamente)
             peca_bloqueando = False
