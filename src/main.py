@@ -1,6 +1,9 @@
 import machine
 import time
 
+# Otimização de emulação
+machine.freq(80000000)
+
 # Configuração de Pinos
 PIN_LDR = 34
 PIN_BTN = 12
@@ -23,7 +26,6 @@ ultimo_estado_btn = 1
 tempo_ultimo_debounce = 0
 
 # Limiares e Constantes
-# No Wokwi, o módulo photoresistor atua elevando a tensão no pino AO quando a luz diminui.
 # 800 lux (livre) -> ADC Baixo (< 2500)
 # 50 lux (bloqueado) -> ADC Alto (> 3000)
 LIMIAR_BLOQUEIO = 2500 
@@ -75,5 +77,5 @@ while True:
             print(f"Peca detectada! Total: {contador_pecas}")
             alerta_enviado = False
 
-    # Delay mínimo ajustado para evitar sobrecarga no emulador sem prejudicar a leitura
-    time.sleep_ms(50)
+    # Delay mínimo ajustado para evitar sobrecarga extrema no host do emulador
+    time.sleep_ms(100)
