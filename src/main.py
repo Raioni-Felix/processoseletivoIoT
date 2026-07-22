@@ -27,7 +27,7 @@ tempo_ultimo_debounce = 0
 
 # Limiares e Constantes
 LIMIAR_BLOQUEIO = 2500 
-TEMPO_MICRO_PARADA_MS = 4000
+TEMPO_MICRO_PARADA_MS = 5000
 
 # Inicialização exigida pelo CI
 print("Contador de Producao Inicializado")
